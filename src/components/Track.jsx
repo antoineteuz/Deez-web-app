@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
-import CustomRouter from "./Router";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class Track extends Component {
   static propTypes = {
@@ -14,16 +12,6 @@ export default class Track extends Component {
   /** Class Method */
   beautifyDuration = duration => {
     return parseInt(222 / 60) + "mn" + 222 % 60;
-  };
-
-  onClickAlbum = id => {
-    console.log("on click album n°" + id);
-    <Link to={"/album/" + id} />;
-  };
-
-  onClickArtist = id => {
-    console.log("on click artiste n°" + id);
-    <Link to={"/artist/" + id} />;
   };
 
   onClickPreview = preview => {
@@ -57,18 +45,20 @@ export default class Track extends Component {
           </p>
         </div>
         <div className="actions">
-          <input
-            className="button_primary"
-            type="button"
-            value="Consulter l'album"
-            onClick={() => this.onClickAlbum(album.id)}
-          />
-          <input
-            className="button_primary"
-            type="button"
-            value="Consulter l'artiste"
-            onClick={() => this.onClickArtist(artist.id)}
-          />
+          <Link to="/album/302127">
+            <input
+              className="button_primary"
+              type="button"
+              value="Consulter l'album"
+            />
+          </Link>
+          <Link to="/artist/27">
+            <input
+              className="button_primary"
+              type="button"
+              value="Consulter l'artiste"
+            />
+          </Link>
           <input
             className="button_primary"
             type="button"

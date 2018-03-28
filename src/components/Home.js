@@ -1,22 +1,25 @@
 // Styles
-import "./App.css";
+import "../App.css";
 
 // API
-import API from "./Api/api";
+import API from "../Api/api";
 
 // Components
 import React, { Component } from "react";
-import SearchForm from "./components/SearchForm";
-import Track from "./components/Track";
-import Header from "./components/Header";
-
-// Router
-import Router from "./components/Router";
+import SearchForm from "./SearchForm";
+import Track from "./Track";
+import Header from "./Header";
 
 class Home extends Component {
   // State
   state = {
     tracks: { data: [] }
+  };
+
+  onSubmit = query => {
+    API.searchTracks(query)
+      .then(res => this.setState({ tracks: res.data }))
+      .catch(console.error);
   };
 
   render() {
@@ -35,12 +38,6 @@ class Home extends Component {
       </div>
     );
   }
-
-  onSubmit = query => {
-    API.searchTracks(query)
-      .then(res => this.setState({ tracks: res.data }))
-      .catch(console.error);
-  };
 }
 
 export default Home;
