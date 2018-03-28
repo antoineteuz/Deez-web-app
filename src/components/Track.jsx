@@ -17,15 +17,17 @@ export default class Track extends Component {
   };
 
   onClickAlbum = id => {
-    console.log("onClickAlbum Event");
+    console.log("on click album n°" + id);
+    <Link to={"/album/" + id} />;
   };
 
   onClickArtist = id => {
-    console.log("onClickArtist Event");
+    console.log("on click artiste n°" + id);
+    <Link to={"/artist/" + id} />;
   };
 
-  onClickListen = () => {
-    console.log("onClickListen Event");
+  onClickPreview = preview => {
+    console.log("Preview :" + preview);
   };
 
   onClickFavori = () => {
@@ -33,7 +35,14 @@ export default class Track extends Component {
   };
 
   render() {
-    const { title, duration, picture, artist, album } = this.props.track;
+    const {
+      title,
+      duration,
+      picture,
+      artist,
+      album,
+      preview
+    } = this.props.track;
     return (
       <div className="Track">
         <div className="image">
@@ -52,19 +61,19 @@ export default class Track extends Component {
             className="button_primary"
             type="button"
             value="Consulter l'album"
-            onClick={this.onClickAlbum(album.id)}
+            onClick={() => this.onClickAlbum(album.id)}
           />
           <input
             className="button_primary"
             type="button"
             value="Consulter l'artiste"
-            onClick={this.onClickArtist(artist.id)}
+            onClick={() => this.onClickArtist(artist.id)}
           />
           <input
             className="button_primary"
             type="button"
             value="Écouter un extrait"
-            onClick={this.onClickListen}
+            onClick={() => this.onClickPreview(preview)}
           />
           <input
             className="button_primary"
