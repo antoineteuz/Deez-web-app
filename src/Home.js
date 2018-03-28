@@ -1,5 +1,4 @@
 // Styles
-import logo from "./logo.svg";
 import "./App.css";
 
 // API
@@ -9,6 +8,7 @@ import API from "./Api/api";
 import React, { Component } from "react";
 import SearchForm from "./components/SearchForm";
 import Track from "./components/Track";
+import Header from "./components/Header";
 
 // Router
 import Router from "./components/Router";
@@ -23,10 +23,7 @@ class Home extends Component {
     console.log("STATE value", this.state);
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title"> Deez web application </h1>
-        </header>
+        <Header />
 
         <SearchForm onSubmit={this.onSubmit} />
 
