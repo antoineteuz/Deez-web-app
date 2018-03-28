@@ -7,6 +7,7 @@ import API from "./Api/api";
 
 // Components
 import React, { Component } from "react";
+import Header from "./components/Header";
 import SearchForm from "./components/SearchForm";
 import Track from "./components/Track";
 
@@ -20,10 +21,7 @@ class Home extends Component {
     console.log("STATE value", this.state);
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title"> Deez web application </h1>
-        </header>
+        <Header />
 
         <SearchForm onSubmit={this.onSubmit} />
 
