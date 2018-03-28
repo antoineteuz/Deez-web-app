@@ -45,14 +45,14 @@ export default class Track extends Component {
           </p>
         </div>
         <div className="actions">
-          <Link to="/album/302127">
+          <Link to={"/album/" + album.id}>
             <input
               className="button_primary"
               type="button"
               value="Consulter l'album"
             />
           </Link>
-          <Link to="/artist/27">
+          <Link to={"/artist/" + artist.id}>
             <input
               className="button_primary"
               type="button"

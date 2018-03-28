@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+// Link
+import { Link } from "react-router-dom";
+
 // Import Others components
 import Track from "./Track";
 import Header from "./Header";
@@ -72,12 +75,16 @@ export default class Solotrack extends Component {
 
             <div className="Track-Album">
               <img src={album.cover_medium} alt={title} />
-              <h2>Album : {album.title}</h2>
+              <Link to={"/album/" + album.id}>
+                <h2>Album : {album.title}</h2>
+              </Link>
             </div>
 
             <div className="Track-Artist">
               <img src={artist.name} alt={artist.name} />
-              <h2>Artiste : {artist.name}</h2>
+              <Link to={"/artist/" + artist.id}>
+                <h2>Artiste : {artist.name}</h2>
+              </Link>
             </div>
 
             <p>Duration : {this.beautifyDuration(duration)}</p>
