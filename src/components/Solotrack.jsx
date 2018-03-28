@@ -85,7 +85,8 @@ export default class Solotrack extends Component {
               </Link>
             </div>
 
-            <audio src={preview} autoPlay>
+            <audio controls src={preview} className="audio">
+              {" "}
               Votre navigateur ne supporte pas l'élément <code>audio</code>.
             </audio>
 
