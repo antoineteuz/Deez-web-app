@@ -1,6 +1,6 @@
 # Deez Web project
 
-Application Web dévelopée avec le FrameWork VueJS
+Application Web dévelopée avec le REACT JS.
 
 ## Sommaire
 
