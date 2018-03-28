@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  padding-bottom: 150px;
 }
 
 .App-logo {
@@ -8,6 +8,7 @@
 }
 
 .App-header {
+  text-align: center;
   background-color: #222;
   height: 150px;
   padding: 20px;
@@ -27,6 +28,64 @@
   padding: 50px;
   border: 1px gray solid;
 }
+
+/** Track item **/
+
+.Track {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  border: 1px gray solid;
+}
+
+.Track .image {
+  width: 49%;
+}
+
+.Track .image img {
+  width: 100%;
+  height: auto;
+}
+
+.Track .informations {
+  width: calc(49% - 10%);
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+.Track .title {
+  color: #222;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.Track .title:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 300px;
+  background-color: #222;
+  margin: 15px 0 25px;
+}
+
+.Track .title.center:after {
+  margin: 15px auto 25px;
+}
+
+.Track .informations .subtitle {
+  width: 100%;
+}
+
+.Track .actions {
+  display: inline-block;
+}
+
+/** React logo **/
 
 @keyframes App-logo-spin {
   from {

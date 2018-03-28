@@ -19,7 +19,7 @@ export default class SearchForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="Form" onSubmit={this.handleSubmit}>
         <label>
           Search:
           <input

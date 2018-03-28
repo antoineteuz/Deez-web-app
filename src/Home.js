@@ -1,18 +1,23 @@
-import React, { Component } from "react";
+// Styles
 import logo from "./logo.svg";
 import "./App.css";
-import API from "./Api/api";
-import SearchForm from "./components/SearchForm";
-import Track from './components/Track';
 
-class App extends Component {
+// API
+import API from "./Api/api";
+
+// Components
+import React, { Component } from "react";
+import SearchForm from "./components/SearchForm";
+import Track from "./components/Track";
+
+class Home extends Component {
   // State
   state = {
-    tracks: { data: [] },
+    tracks: { data: [] }
   };
 
   render() {
-    console.log('STATE value', this.state);
+    console.log("STATE value", this.state);
     return (
       <div className="App">
         <header className="App-header">
@@ -22,7 +27,11 @@ class App extends Component {
 
         <SearchForm onSubmit={this.onSubmit} />
 
-        <div>{this.state.tracks.data.map(track => <Track key={track.id} track={track} />)}</div>
+        <div>
+          {this.state.tracks.data.map(track => (
+            <Track key={track.id} track={track} />
+          ))}
+        </div>
       </div>
     );
   }
@@ -34,4 +43,4 @@ class App extends Component {
   };
 }
 
-export default App;
+export default Home;
