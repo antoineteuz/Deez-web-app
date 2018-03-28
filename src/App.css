@@ -19,13 +19,11 @@
   font-size: 1.5em;
 }
 
-/** Form to send the query to get tracks **/
-
 .Form {
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 80%;
   height: 40%;
   padding: 50px;
   border: 1px gray solid;
@@ -86,10 +84,6 @@
 .Track .actions {
   display: inline-block;
 }
-
-/** Album item **/
-
-/** Artist item **/
 
 /** React logo **/
 
