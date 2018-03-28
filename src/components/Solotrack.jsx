@@ -17,8 +17,6 @@ export default class Solotrack extends Component {
   // Constructor
   constructor(props) {
     super(props);
-    console.log("From constructor");
-    console.log(props.location.pathname);
     this.pathname = props.location.pathname;
   }
 
@@ -86,6 +84,10 @@ export default class Solotrack extends Component {
                 <h2>Artiste : {artist.name}</h2>
               </Link>
             </div>
+
+            <audio src={preview} autoPlay>
+              Votre navigateur ne supporte pas l'élément <code>audio</code>.
+            </audio>
 
             <p>Duration : {this.beautifyDuration(duration)}</p>
 

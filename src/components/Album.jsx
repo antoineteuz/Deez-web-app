@@ -5,6 +5,9 @@ import PropTypes from "prop-types";
 import Track from "./Track";
 import Header from "./Header";
 
+// Link
+import { Link } from "react-router-dom";
+
 // API
 import API from "../Api/api";
 
@@ -34,18 +37,23 @@ export default class Album extends Component {
     console.log("Render");
 
     if (Object.keys(this.state.album).length !== 0) {
-      console.log("Album loaded");
-      console.log(this.state.album);
-      const { title, cover_medium, link } = this.state.album;
-      const { tracks } = this.state.album.tracks;
-      console.log("Title : ", title);
+      const { title, cover_medium, link, tracks } = this.state.album;
+
       return (
         <div className="App">
           <Header />
           <div>
             <h1>{title}</h1>
             <img src={cover_medium} alt={title} />
-            <div className="Album-playlist" />
+            <div className="Album-playlist">
+              <ul>
+                {tracks.data.map(item => (
+                  <Link to={"/track/" + item.id}>
+                    <li>{item.title}</li>
+                  </Link>
+                ))}
+              </ul>
+            </div>
             <p>Ranking : ...</p>
 
             <form action={link}>
