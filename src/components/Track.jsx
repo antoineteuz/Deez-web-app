@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import CustomRouter from "./Router";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 export default class Track extends Component {
   static propTypes = {
     track: PropTypes.object.isRequired,
@@ -8,9 +11,26 @@ export default class Track extends Component {
     album: PropTypes.object.isRequired
   };
 
-  printMinute(duration) {
-    return 222 / 60 + "mn" + 222 % 60 + " s.";
-  }
+  /** Class Method */
+  beautifyDuration = duration => {
+    return parseInt(222 / 60) + "mn" + 222 % 60;
+  };
+
+  onClickAlbum = id => {
+    console.log("onClickAlbum Event");
+  };
+
+  onClickArtist = id => {
+    console.log("onClickArtist Event");
+  };
+
+  onClickListen = () => {
+    console.log("onClickListen Event");
+  };
+
+  onClickFavori = () => {
+    console.log("onClickFavori Event");
+  };
 
   render() {
     const { title, duration, picture, artist, album } = this.props.track;
@@ -23,24 +43,35 @@ export default class Track extends Component {
           <h2 className="title">{title}</h2>
           <p className="subtitle">Artist : {artist.name}</p>
           <p className="subtitle">Album : {album.title}</p>
-          <p className="subtitle">Duration : {duration} secondes</p>
+          <p className="subtitle">
+            Duration : {this.beautifyDuration(duration)}
+          </p>
         </div>
         <div className="actions">
-          <button type="submit" class="" onClick="">
-            Écouter un extrait
-          </button>
-
-          <button type="submit" class="" onClick="">
-            Consulter l'album
-          </button>
-
-          <button type="submit" class="">
-            Consulter l'artiste
-          </button>
-
-          <button type="submit" class="">
-            Mettre en favori
-          </button>
+          <input
+            className="button_primary"
+            type="button"
+            value="Consulter l'album"
+            onClick={this.onClickAlbum(album.id)}
+          />
+          <input
+            className="button_primary"
+            type="button"
+            value="Consulter l'artiste"
+            onClick={this.onClickArtist(artist.id)}
+          />
+          <input
+            className="button_primary"
+            type="button"
+            value="Écouter un extrait"
+            onClick={this.onClickListen}
+          />
+          <input
+            className="button_primary"
+            type="button"
+            value="Mettre en favoris"
+            onClick={this.onClickFavori}
+          />
         </div>
       </div>
     );

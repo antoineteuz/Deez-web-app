@@ -11,6 +11,9 @@ import Header from "./components/Header";
 import SearchForm from "./components/SearchForm";
 import Track from "./components/Track";
 
+// Router
+import Router from "./components/Router";
+
 class Home extends Component {
   // State
   state = {
