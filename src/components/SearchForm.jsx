@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 export default class SearchForm extends Component {
-
   static propTypes = { onSubmit: PropTypes.func.isRequired };
 
   state = { value: "" };
@@ -20,17 +19,24 @@ export default class SearchForm extends Component {
 
   render() {
     return (
-      <form className="Form" onSubmit={this.handleSubmit}>
-        <label>
-          Search:
+      <div>
+        <form className="searchform" onSubmit={this.handleSubmit}>
           <input
             type="text"
+            className="searchform-textbox"
+            placeholder="Rechercher une musique"
             value={this.state.value}
             onChange={this.handleChange}
           />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+
+          <input
+            title="Search"
+            className="searchform-btn"
+            type="submit"
+            value="Submit"
+          />
+        </form>
+      </div>
     );
   }
 }

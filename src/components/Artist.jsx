@@ -39,7 +39,7 @@ export default class Artist extends Component {
       //
       const {
         name,
-        picture_medium,
+        picture_big,
         nb_album,
         nb_fan,
         link
@@ -47,9 +47,9 @@ export default class Artist extends Component {
       return (
         <div className="App">
           <Header />
-          <div>
-            <h1>{name}</h1>
-            <img src={picture_medium} alt={name} />
+          <div className="artist">
+            <h1 className="artist-title">{name}</h1>
+            <img src={picture_big} alt={name} />
             <div className="Album-playlist" />
             <p>Nombre d'albums : {nb_album}</p>
             <p>Nombre de fans : {nb_fan}</p>

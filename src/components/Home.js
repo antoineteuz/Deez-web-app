@@ -24,19 +24,30 @@ class Home extends Component {
 
   render() {
     console.log("STATE value", this.state);
-    return (
-      <div className="App">
-        <Header />
 
-        <SearchForm onSubmit={this.onSubmit} />
+    if (Object.keys(this.state.tracks).length !== 0) {
+      return (
+        <div className="App">
+          <Header />
 
-        <div>
-          {this.state.tracks.data.map(track => (
-            <Track key={track.id} track={track} />
-          ))}
+          <SearchForm onSubmit={this.onSubmit} />
+
+          <div>
+            {this.state.tracks.data.map(track => (
+              <Track key={track.id} track={track} />
+            ))}
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="App">
+          <Header />
+
+          <SearchForm onSubmit={this.onSubmit} />
+        </div>
+      );
+    }
   }
 }
 

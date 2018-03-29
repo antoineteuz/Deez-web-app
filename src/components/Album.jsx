@@ -42,14 +42,17 @@ export default class Album extends Component {
       return (
         <div className="App">
           <Header />
-          <div>
+          <div className="album">
             <h1>{title}</h1>
             <img src={cover_medium} alt={title} />
-            <div className="Album-playlist">
-              <ul>
+            <div className="album-playlist">
+              <ul className="gray-box">
+                <li className="black">Liste des musiques</li>
                 {tracks.data.map(item => (
                   <Link to={"/track/" + item.id}>
-                    <li>{item.title}</li>
+                    <li>
+                      <p>{item.title}</p>
+                    </li>
                   </Link>
                 ))}
               </ul>

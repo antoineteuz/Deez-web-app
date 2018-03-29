@@ -14,10 +14,6 @@ export default class Track extends Component {
     return parseInt(222 / 60) + "mn" + 222 % 60;
   };
 
-  onClickPreview = preview => {
-    console.log("Preview :" + preview);
-  };
-
   onClickFavori = () => {
     console.log("onClickFavori Event");
   };
@@ -33,16 +29,21 @@ export default class Track extends Component {
     } = this.props.track;
     return (
       <div className="Track">
+        <h2 className="title">{title}</h2>
         <div className="image">
-          <img className="Track-img" src={album.cover_big} alt={title} />
+          <img className="Track-img" src={album.cover_medium} alt={title} />
         </div>
         <div className="informations">
-          <h2 className="title">{title}</h2>
           <p className="subtitle">Artist : {artist.name}</p>
           <p className="subtitle">Album : {album.title}</p>
           <p className="subtitle">
             Duration : {this.beautifyDuration(duration)}
           </p>
+
+          <audio controls src={preview} className="audio">
+            {" "}
+            Votre navigateur ne supporte pas l'élément <code>audio</code>.
+          </audio>
         </div>
         <div className="actions">
           <Link to={"/album/" + album.id}>
@@ -59,12 +60,6 @@ export default class Track extends Component {
               value="Consulter l'artiste"
             />
           </Link>
-          <input
-            className="button_primary"
-            type="button"
-            value="Écouter un extrait"
-            onClick={() => this.onClickPreview(preview)}
-          />
           <input
             className="button_primary"
             type="button"

@@ -11,7 +11,8 @@
   text-align: center;
   background-color: #222;
   height: 150px;
-  padding: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
   color: white;
 }
 
@@ -19,40 +20,89 @@
   font-size: 1.5em;
 }
 
-.Form {
+/** React logo **/
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/** NavBar **/
+
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: #222;
+  position: relative;
+}
+
+.nav-btn-container {
+  display: inline;
+  font-size: 18px;
+}
+
+.nav-btn {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav-btn:hover {
+  background-color: rgb(131, 131, 131);
+}
+
+/** Search From **/
+
+.searchform {
   margin-top: 50px;
+  padding: 30px;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
-  height: 40%;
-  padding: 50px;
-  border: 1px gray solid;
+  width: 80%;
+}
+
+.searchform-textbox {
+  width: 90%;
+  border: 2px solid #00b4cc;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  color: #00b4cc;
+}
+
+.searchform-btn {
+  position: absolute;
+  width: 10%;
+  height: 33px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #00b4cc;
+  background: #00b4cc;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
 }
 
 /** Track item **/
 
 .Track {
-  padding: 50px;
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
+  padding: 30px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
+  width: 80%;
+  text-align: center;
   border: 1px gray solid;
 }
 
-.Track .image {
-  width: 49%;
-}
-
-.Track .image img {
-  width: 100%;
-  height: auto;
-}
-
 .Track .informations {
-  width: calc(49% - 10%);
   display: flex;
   flex-direction: column;
   padding: 5%;
@@ -68,7 +118,6 @@
   content: "";
   display: block;
   height: 2px;
-  width: 300px;
   background-color: #222;
   margin: 15px 0 25px;
 }
@@ -85,13 +134,110 @@
   display: inline-block;
 }
 
-/** React logo **/
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Track audio {
+  margin-top: 20px;
+  width: 100%;
 }
+
+.Track .actions input {
+  height: 33px;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #00b4cc;
+  background: #00b4cc;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+}
+
+/** Artist **/
+
+.artist {
+  padding: 30px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+}
+
+.artist-title {
+}
+
+.artist img {
+}
+
+.Album-playlist {
+}
+
+.artist p {
+}
+
+.artist form input {
+  margin-top: 10px;
+  height: 33px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #00b4cc;
+  background: #00b4cc;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+}
+
+/** Album **/
+
+.album {
+  padding: 30px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+}
+
+.album h1 {
+  color: #222;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.album h1:after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #222;
+  margin: 15px 0 25px;
+}
+
+.album img {
+  margin-top: 20px;
+}
+
+.album-playlist {
+  margin-top: 50px;
+}
+
+.album .gray-box li {
+  color: #777878;
+  border: 1px solid #eeeeee;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.album form input {
+  margin-top: 10px;
+  height: 33px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #00b4cc;
+  background: #00b4cc;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+}
+
+/** Solo track **/
