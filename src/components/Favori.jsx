@@ -1,12 +1,8 @@
 // Styles
 import "../App.css";
 
-// API
-import API from "../Api/api";
-
 // Components
 import React, { Component } from "react";
-import Track from "./Track";
 import Header from "./Header";
 
 class Favori extends Component {

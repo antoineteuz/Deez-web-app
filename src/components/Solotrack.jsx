@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 // Link
 import { Link } from "react-router-dom";
 
 // Import Others components
-import Track from "./Track";
 import Header from "./Header";
 
 // API
@@ -68,19 +66,25 @@ export default class Solotrack extends Component {
       return (
         <div className="App">
           <Header />
-          <div>
+          <div className="solotrack">
             <h1>{title}</h1>
 
-            <div className="Track-Album">
+            <div>
               <img src={album.cover_medium} alt={title} />
-              <Link to={"/album/" + album.id}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to={"/album/" + album.id}
+              >
                 <h2>Album : {album.title}</h2>
               </Link>
             </div>
 
-            <div className="Track-Artist">
-              <img src={artist.name} alt={artist.name} />
-              <Link to={"/artist/" + artist.id}>
+            <div>
+              <img src={artist.picture_medium} alt={artist.name} />
+              <Link
+                style={{ textDecoration: "none" }}
+                to={"/artist/" + artist.id}
+              >
                 <h2>Artiste : {artist.name}</h2>
               </Link>
             </div>

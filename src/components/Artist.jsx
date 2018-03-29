@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 // Import Others components
-import Track from "./Track";
 import Header from "./Header";
 
 // API
@@ -37,13 +35,7 @@ export default class Artist extends Component {
       console.log("Artist loaded");
       console.log(this.state.artist);
       //
-      const {
-        name,
-        picture_big,
-        nb_album,
-        nb_fan,
-        link
-      } = this.state.artist;
+      const { name, picture_big, nb_album, nb_fan, link } = this.state.artist;
       return (
         <div className="App">
           <Header />

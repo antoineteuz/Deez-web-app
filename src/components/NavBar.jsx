@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 // Styles
-import logo from "../logo.svg";
 import "../App.css";
 
 // Link

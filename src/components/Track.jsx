@@ -19,17 +19,12 @@ export default class Track extends Component {
   };
 
   render() {
-    const {
-      title,
-      duration,
-      picture,
-      artist,
-      album,
-      preview
-    } = this.props.track;
+    const { id, title, duration, artist, album, preview } = this.props.track;
     return (
       <div className="Track">
-        <h2 className="title">{title}</h2>
+        <Link style={{ textDecoration: "none" }} to={"/album/" + id}>
+          <h2 className="title">{title}</h2>
+        </Link>
         <div className="image">
           <img className="Track-img" src={album.cover_medium} alt={title} />
         </div>
@@ -46,14 +41,14 @@ export default class Track extends Component {
           </audio>
         </div>
         <div className="actions">
-          <Link to={"/album/" + album.id}>
+          <Link style={{ textDecoration: "none" }} to={"/album/" + album.id}>
             <input
               className="button_primary"
               type="button"
               value="Consulter l'album"
             />
           </Link>
-          <Link to={"/artist/" + artist.id}>
+          <Link style={{ textDecoration: "none" }} to={"/artist/" + artist.id}>
             <input
               className="button_primary"
               type="button"

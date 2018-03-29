@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 // Import Others components
-import Track from "./Track";
 import Header from "./Header";
 
 // Link
@@ -26,6 +24,10 @@ export default class Album extends Component {
     album: {}
   };
 
+  beautifyDuration = duration => {
+    return parseInt(222 / 60) + "mn" + 222 % 60;
+  };
+
   componentDidMount() {
     console.log("ComponendDidMount");
     API.getEntity(this.props.location.pathname)
@@ -37,7 +39,16 @@ export default class Album extends Component {
     console.log("Render");
 
     if (Object.keys(this.state.album).length !== 0) {
-      const { title, cover_medium, link, tracks } = this.state.album;
+      const {
+        title,
+        nb_tracks,
+        duration,
+        release_date,
+        fans,
+        cover_medium,
+        link,
+        tracks
+      } = this.state.album;
 
       return (
         <div className="App">
@@ -45,11 +56,18 @@ export default class Album extends Component {
           <div className="album">
             <h1>{title}</h1>
             <img src={cover_medium} alt={title} />
+            <p>
+              {nb_tracks} titres, {this.beautifyDuration(duration)},{" "}
+              {release_date}, {fans} fans
+            </p>
             <div className="album-playlist">
               <ul className="gray-box">
                 <li className="black">Liste des musiques</li>
                 {tracks.data.map(item => (
-                  <Link to={"/track/" + item.id}>
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={"/track/" + item.id}
+                  >
                     <li>
                       <p>{item.title}</p>
                     </li>

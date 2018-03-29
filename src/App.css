@@ -241,3 +241,38 @@
 }
 
 /** Solo track **/
+
+.solotrack {
+  padding: 30px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+}
+
+.solotrack h1 {
+  color: #222;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.solotrack h1:after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #222;
+  margin: 15px 0 25px;
+}
+
+.solotrack form input {
+  margin-top: 10px;
+  height: 33px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #00b4cc;
+  background: #00b4cc;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+}
