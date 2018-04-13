@@ -11,19 +11,47 @@ import Track from "./Track";
 import Header from "./Header";
 
 class Home extends Component {
+  // Constructor
+
+  constructor(props) {
+    super(props);
+
+    // State value
+    console.log("Constructor params id : ", this.props.match.params.id);
+
+    this.state = {
+      tracks: { data: [] },
+      query: this.props.match.params.id
+    };
+
+    if (this.state.query !== undefined) {
+      // Launch method onSubmit
+      this.onSubmit(this.state.query);
+    }
+  }
+
   // State
   state = {
-    tracks: { data: [] }
+    tracks: { data: [] },
+    query: ""
   };
 
   onSubmit = query => {
+    // Change URL
+
+    console.log("(On Submit) : props", this.props);
+
+    console.log("Trying to add query in url", query);
+
+    this.props.history.push("/search/" + query);
+
     API.searchTracks(query)
       .then(res => this.setState({ tracks: res.data }))
       .catch(console.error);
   };
 
   render() {
-    console.log("STATE value", this.state);
+    console.log("(RENDER) : STATE value", this.state);
 
     if (Object.keys(this.state.tracks).length !== 0) {
       return (

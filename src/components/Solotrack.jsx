@@ -101,8 +101,6 @@ export default class Solotrack extends Component {
             <form action={link}>
               <input type="submit" value="Lien de ce morceau vers Deezer" />
             </form>
-
-            <div className="Solotrack-actions" />
           </div>
         </div>
       );

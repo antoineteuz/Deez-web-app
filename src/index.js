@@ -13,6 +13,7 @@ ReactDOM.render(
   <Router>
     <div>
       <Route exact path="/" component={Home} />
+      <Route path="/search/:id" component={Home} />
       <Route path="/favoris" name="favoris" component={Favori} />
       <Route path="/artist/:id" name="artist" component={Artist} />
       <Route path="/album/:id" name="album" component={Album} />

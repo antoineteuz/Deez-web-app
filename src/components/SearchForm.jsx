@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 export default class SearchForm extends Component {
-  static propTypes = { onSubmit: PropTypes.func.isRequired };
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired
+  };
 
   state = { value: "" };
 
