@@ -1,0 +1,6 @@
+TODO :
+
+Put value inside Submit on first time route
+Errors when loading content
+Ameliorate design
+Local storage Favorites
